@@ -1,23 +1,159 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tachyons/4.7.0/tachyons.css">
-		<title>Dreamforce 2018 is the best</title>
-	</head>
-	<body>
-		<div class="vh-100 w-100 flex justify-center">
-			<div class="flex flex-column items-center justify-center">
-				<h2 class="fw4 green">Panorama Trail!</h2>
-				<p class="silver ma0">Built with Heroku</p>
-				<div class="pt5">
-					<span id="env" class="white pv1 ph2 br-pill bg-light-blue"></span>
-				</div>
-			</div>
-		</div>
+<META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
 
-		<script>
-			var env = "<%= env %>";
-			document.getElementById("env").innerHTML = env;
-		</script>
-	</body>
-</html>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script>
+     function timestamp() { var response = document.getElementById("g-recaptcha-response"); 
+     if (response == null || response.value.trim() == "") {var elems = JSON.parse(document.getElementsByName("captcha_settings")[0].value);
+     elems["ts"] = JSON.stringify(new Date().getTime());document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems); } } 
+     setInterval(timestamp, 500); 
+    </script>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+         }
+         body {
+            background: #f69a73;
+         }
+         .form {
+            position: relative;
+            max-width: 500px;
+            margin: 50px auto 0;
+            background: white;
+            border-radius: 30px;
+         }
+         .form-inner {
+            padding: 50px;
+         }
+         .form-inner input, .form-inner textarea {
+            display: block;
+            width: 100%;
+            padding: 0 20px;
+            margin-bottom: 10px;
+            background: #E9EFF6;
+            line-height: 40px;
+            border-width: 0;
+            border-radius: 10px;
+            font-size: 15px;
+            font-family: 'Roboto', sans-serif;
+         }
+         select {
+            display: block;
+            width: 100%;
+            margin-top: 5px;
+            cursor: pointer;
+            padding: 10px 15px;
+            outline: 0;
+            border: 0;
+            border-radius: 10px;
+            font-size: 15px;
+            background: #E9EFF6;
+            color: #707981;
+         }
+         .form-inner input[type="submit"] {
+            margin-top: 30px;
+            background: #f69a73;
+            border-bottom: 4px solid #d87d56;
+            color: white;
+            font-size: 18px;
+         }
+         .form-inner input[type="submit"]:hover {
+            margin-top: 30px;
+            background: #fda884;
+            border-bottom: 4px solid #743b23;
+            color: white;
+            font-size: 18px;
+         }
+         .form-inner input[type="submit"]:active {
+            background: #fda884;
+            border-bottom: 4px solid #743b23;
+            color: white;
+            font-size: 18px;
+            transform: translateY(4px);
+         }
+         .form-inner textarea {
+            resize: none;
+         }
+         .form-inner h3 {
+            margin-top: 0;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 500;
+            font-size: 24px;
+            color: #707981;
+            margin-left: 10px;
+         }
+         .prod {
+             padding: 10px;
+         }
+         .text-center {
+            text-align: center;
+        }
+    
+        .g-recaptcha {
+            display: inline-block;
+            margin-top: 20px;
+        }
+        .b{
+            color: #707981;
+        }
+    </style>
+
+
+    <form class="form" action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
+        
+    <input type=hidden name='captcha_settings' value='{"keyname":"captcha123","fallback":"true","orgId":"00D09000007yYhy","ts":""}'>
+    <input type=hidden name="oid" value="00D09000007yYhy">
+    <input type=hidden name="retURL" value="https://successcraft-fd-dev-ed.lightning.force.com/lightning/o/Lead/">
+        
+        <div class="form-inner">
+        <h3>Enter required values</h3>
+        <input type="text" for="company"    placeholder="Company name"       id="company"    maxlength="40" name="company"       size="20" type="text" required>
+        <input type="text" for="first_name" placeholder="First name"    id="first_name" maxlength="40" name="first_name"    size="20" type="text" required>
+        <input type="text" for="last_name"  placeholder="Last name"     id="last_name"  maxlength="80" name="last_name"     size="20" type="text" required>
+        <input type="email" for="email"     placeholder="Email"         id="email"      maxlength="80" name="email"         size="20" type="text" required>
+        <input type="phone" for="phone"     placeholder="Phone number"  id="phone"      maxlength="40" name="phone"         size="20" type="text" required>
+        <label class="prod" for="product"><b class="b">Product:</b></label></br>
+        <select id="00N0900000EX9fg" name="00N0900000EX9fg" title="Product" required>
+            <option value="">--None--</option>
+            <option value="R001C1">Renault Logan</option>
+            <option value="R002C2">Renault Logan Stepway</option>
+            <option value="R003C3">Renault Sandero</option>
+            <option value="R004C4">Renault Sandero Stepway</option>
+            <option value="R005E1">K7M</option>
+            <option value="R006E2">K4M</option>
+            <option value="R007E3">H4M</option>
+            <option value="HK001C1">Kia Rio</option>
+            <option value="HK002C2">Kia Rio X-Line</option>
+            <option value="HK003C3">Hyundai Accent</option>
+            <option value="HK004C4">Hyundai Solaris</option>
+            <option value="HK005E1">G4LC</option>
+            <option value="HK006E2">G4FG</option>
+            <option value="VAG001C1">Volkswagen Polo Sedan</option>
+            <option value="VAG002C2">Volkswagen Polo 2021</option>
+            <option value="VAG003C3">Skoda Rapid</option>
+            <option value="VAG004E1">CZCA</option>
+            <option value="VAG005E2">CFW</option>
+            <option value="VAG006E3">CWVA</option>
+            <option value="VAG007E4">CFNA</option>
+            <option value="VAG008E5">VAG008E5</option>
+            <option value="L001C1">CFNB</option>
+            <option value="L002C2">Lada Vesta</option>
+            <option value="L003E1">Lada Xray</option>
+            <option value="L004E2">VAZ-21129</option>
+            <option value="R008A1">Carpets Renault</option>
+            <option value="HK007A1">Carpets Hyundai</option>
+            <option value="HK008A2">Carpets Kia</option>
+            <option value="VAG009A1">Carpets Volkswagen</option>
+            <option value="VAG010A2">Carpets Skoda</option>
+            <option value="L005A1">Carpets Lada</option>
+            <option value="MI001A1">Phone holder Xiaomi</option>
+        </select>
+
+        <div class="text-center">
+        <div class="g-recaptcha" data-sitekey="6LeH0KMbAAAAAAbNZjCvKztBJbDFMV1nauXG4X5t"></div><br>
+        </div>
+
+        <input type="submit" name="submit" value="Send">
+        </div>
+        </form>
